@@ -10,11 +10,13 @@
 #include <string>
 using namespace std;
 
+// Build a table to record the optimal solution for subarray
 typedef struct table{
     string b[100][100];
     int c[100][100];
 }table;
 
+// Function to find the longest common subsequence by dynamic programming. It will return the table recording optimal solution for subarray
 table LCS_length(char X[][2], char Y[][2], int m, int n){
     table T;
     for (int i = 0; i <= m; i++) {
@@ -39,7 +41,7 @@ table LCS_length(char X[][2], char Y[][2], int m, int n){
     }
     return T;
 }
-
+// Function to print the reference table for solution of subarray
 void print_LCS(string b[][100], char X[][2], int i, int j) {
     if (i == 0 || j == 0) {
         return;
